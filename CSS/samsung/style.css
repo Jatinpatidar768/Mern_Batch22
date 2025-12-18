@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content:  space-between;
+    padding: 25px 40px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lab(59.05% 17.7 17.7);
+    padding: 60px 40px;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 70px;
+
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    
+}
+
+.hero-img img {
+    width: 260px;
+    background-color: #3a4395;
+    width: 70%;
+   
+}
+
+.demo1{
+    /* display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 60px 20px; */
+     display: flex;
+     justify-content: space-around;
+     text-align: center;
+     gap: 10px;
+     margin-top: 40px;
+     margin-left: 80px;
+
+    
+}
+#kya{
+    margin-left: 40px;
+}
+.demo2 img{
+    height: 150px;
+}
+#img1 img{
+    margin-right: 50px;
+}
+
+footer {
+    padding: 40px;
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #b75959;
+}
+
+#yes{
+    padding: 20px;
+}
+#yes2{
+    padding: 20px;
+}
+#yes3{
+    padding: 20px;
+}
+#yes4{
+    padding: 20px;
+}
