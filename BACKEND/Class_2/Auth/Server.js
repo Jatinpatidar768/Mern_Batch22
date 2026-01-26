@@ -18,6 +18,6 @@ app.use("/api/v1",authRoute)
 
 app.get("/", (req, res) => {
     res.json({
-        message: "We are running hhh"
+        message: "We are running"
     })
 })

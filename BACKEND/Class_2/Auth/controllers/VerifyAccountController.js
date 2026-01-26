@@ -59,7 +59,6 @@ async function VerifyAccount(req, res) {
         // user ke response ko return karao taki aap json formate me reqponse dekh sake
         return res.status(201).json({
             success: true,
-
             message: "User verified successfully, please login"
         })
     }

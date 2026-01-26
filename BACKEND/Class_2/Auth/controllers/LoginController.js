@@ -1,5 +1,6 @@
 const User = require("../model/UserModel.js");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 async function Login(req, res) {
 
     try {
@@ -45,10 +46,45 @@ async function Login(req, res) {
                 message: `Plaese verify your account you got an email where is otp so verify then come!!!!`
             })
         }
+
+
+        // agar mere sare validation ho gaye honge to me yha aaya hounga 
+
+        // mera password or email shi means db ke andar entry dali so-:
         if (await bcrypt.compare(password, userExist?.password)) {
+
+            // token ko gemerate karo
+            const payload = {
+                id: userExist._id,
+                email: userExist.email,
+                role: userExist.role
+            }
+            // secret key le aao 
+            const jwtSecret = process.env.JWTSECRETKEY;
+
+
+            // generate kar do jwt token 
+
+            // token ko generate karne ke leaye aap sign method ka use karte hai jo jwt object deta hai
+            const token = jwt.sign(payload, jwtSecret);
+            console.log("my created token is", token);
+
+
+            // bad practice -1
+            // me token ko db ke andar daal rha hu 
+            //    userExist.token = token;
+            //    await userExist.save();
+
+
+
+            // bad practice no. two
+
+
+       
             return res.status(200).json({
                 success: true,
-                message: "Login Successfully"
+                message: "Login Successfully",
+                token:token
             })
         }
         else {

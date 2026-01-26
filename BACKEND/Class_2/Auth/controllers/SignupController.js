@@ -27,7 +27,7 @@ async function Signup(req, res) {
             })
         }
         // generate otp kar lo 
-        const otp = genereateOtp();
+        const otp = await genereateOtp();
 
         // send email to get otp which is used for account verification
         await TriggerEmail(email, otp, name, `Verifiying Your Account using ${otp}`, "SignMailOtp");
